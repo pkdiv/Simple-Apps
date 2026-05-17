@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -13,7 +13,7 @@ interface PreviewCardProps {
     description: string;
     href: string;
     previewSrc: string;
-    previewImage?: string;
+    previewImage?: string | StaticImageData;
     external?: boolean;
 }
 
@@ -86,11 +86,11 @@ export default function PreviewCard({
             <div className="flex items-center justify-between px-5 py-4">
                 <div className="flex flex-col gap-0.5">
                     <h2 className="text-sm font-semibold text-white tracking-tight">{name}</h2>
-                    <p className="text-[11px] leading-relaxed text-zinc-500 line-clamp-1">{description}</p>
+                    <p className="text-[11px] leading-relaxed text-zinc-400 line-clamp-1">{description}</p>
                 </div>
                 <div className="flex h-7 w-7 items-center justify-center rounded-full bg-zinc-800/50 transition-colors group-hover:bg-zinc-700/50">
                     <svg
-                        className="h-3.5 w-3.5 text-zinc-600 transition group-hover:translate-x-0.5 group-hover:text-zinc-300"
+                         className="h-3.5 w-3.5 text-zinc-400 transition group-hover:translate-x-0.5 group-hover:text-zinc-300"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"

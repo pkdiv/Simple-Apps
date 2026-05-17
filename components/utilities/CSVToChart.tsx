@@ -11,7 +11,7 @@ interface ChartData {
 }
 
 export default function CSVToChart() {
-  const [parsedData, setParsedData] = useState<Record<string, any>[]>([]);
+  const [parsedData, setParsedData] = useState<Record<string, string>[]>([]);
   const [columns, setColumns] = useState<string[]>([]);
   const [mode, setMode] = useState<'auto' | 'custom'>('auto');
   const [labelCol, setLabelCol] = useState<string>('');
@@ -79,13 +79,13 @@ export default function CSVToChart() {
       return;
     }
 
-    const cols = Object.keys(results.data[0] as Record<string, any>);
+    const cols = Object.keys(results.data[0] as Record<string, string>);
     if (cols.length < 2) {
       setError('CSV must have at least 2 columns');
       return;
     }
 
-    setParsedData(results.data as Record<string, any>[]);
+    setParsedData(results.data as Record<string, string>[]);
     setColumns(cols);
     setLabelCol(cols[0]);
     setValueCol(cols[1]);
@@ -99,8 +99,8 @@ export default function CSVToChart() {
     const val = mode === 'auto' ? columns[1] : valueCol;
 
     return parsedData.map((row) => ({
-      name: String(row[lbl]),
-      value: parseFloat(row[val]) || 0,
+      name: String(row[lbl] ?? ''),
+      value: parseFloat(row[val] ?? '') || 0,
     }));
   };
 
@@ -115,14 +115,14 @@ export default function CSVToChart() {
       <div className="w-full max-w-4xl flex flex-col gap-8 my-auto">
 
         <div className="flex items-center justify-between">
-          <p className={`text-xs font-medium uppercase tracking-widest ${theme === "dark" ? "text-zinc-500" : "text-zinc-400"}`}>
+          <p className={`text-xs font-medium uppercase tracking-widest ${theme === "dark" ? "text-zinc-400" : "text-zinc-600"}`}>
             Data Visualizer
           </p>
           <button
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
             className={`rounded-lg border p-2 transition active:scale-95 ${theme === "dark"
-                ? "border-zinc-800 bg-zinc-900/50 text-zinc-500 hover:border-zinc-600 hover:text-white"
-                : "border-zinc-200 bg-white text-zinc-400 hover:border-zinc-400 hover:text-zinc-900"
+                ? "border-zinc-800 bg-zinc-900/50 text-zinc-400 hover:border-zinc-600 hover:text-white"
+                : "border-zinc-200 bg-white text-zinc-500 hover:border-zinc-400 hover:text-zinc-900"
               }`}
             title={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
           >
@@ -191,7 +191,7 @@ export default function CSVToChart() {
                 onChange={handleFileUpload}
                 className={`w-full text-sm ${theme === "dark" ? "file:bg-zinc-800 file:text-zinc-300" : "file:bg-zinc-100 file:text-zinc-700"} file:border-0 file:rounded-lg file:px-4 file:py-2 file:mr-4 file:font-medium hover:file:cursor-pointer hover:file:opacity-80 transition-all`}
               />
-              <p className={`text-sm mt-2 ${theme === "dark" ? "text-zinc-500" : "text-zinc-400"}`}>
+              <p className={`text-sm mt-2 ${theme === "dark" ? "text-zinc-400" : "text-zinc-600"}`}>
                 Select a CSV file to visualize
               </p>
             </>
@@ -207,7 +207,7 @@ export default function CSVToChart() {
                     : "bg-white border-zinc-300 text-zinc-900 focus:border-zinc-500"
                   }`}
               />
-              <p className={`text-sm mt-2 ${theme === "dark" ? "text-zinc-500" : "text-zinc-400"}`}>
+              <p className={`text-sm mt-2 ${theme === "dark" ? "text-zinc-400" : "text-zinc-600"}`}>
                 Paste raw CSV content with a header row
               </p>
             </>
@@ -237,7 +237,7 @@ export default function CSVToChart() {
                 </div>
                 <div>
                   <span className="font-medium text-sm">Auto-detect</span>
-                  <p className={`text-xs mt-1 ${theme === "dark" ? "text-zinc-500" : "text-zinc-400"}`}>
+                  <p className={`text-xs mt-1 ${theme === "dark" ? "text-zinc-400" : "text-zinc-600"}`}>
                     Use first column as labels, second as values
                   </p>
                 </div>
@@ -256,7 +256,7 @@ export default function CSVToChart() {
                 </div>
                 <div>
                   <span className="font-medium text-sm">Custom selection</span>
-                  <p className={`text-xs mt-1 ${theme === "dark" ? "text-zinc-500" : "text-zinc-400"}`}>
+                  <p className={`text-xs mt-1 ${theme === "dark" ? "text-zinc-400" : "text-zinc-600"}`}>
                     Manually select data columns
                   </p>
                 </div>

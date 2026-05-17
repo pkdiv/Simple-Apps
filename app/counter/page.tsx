@@ -1,5 +1,5 @@
-import LimitCounter from "@/components/utilities/LimitCounter";
 import { Metadata } from "next";
+import CounterClient from "./CounterClient";
 
 export const metadata: Metadata = {
     title: "Tap Counter | Minimal & Beautiful Tally Counter",
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 export default function Page() {
     return (
         <main className="h-screen flex flex-col overflow-hidden">
-            <LimitCounter />
+            <CounterClient />
         </main>
     );
 }

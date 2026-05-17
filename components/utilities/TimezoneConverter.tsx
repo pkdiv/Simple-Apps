@@ -177,14 +177,14 @@ export default function TimezoneConverter() {
         >
             <div className="w-full max-w-4xl flex flex-col gap-8 my-auto">
                 <div className="flex items-center justify-between">
-                    <p className={`text-xs font-medium uppercase tracking-widest ${theme === "dark" ? "text-zinc-500" : "text-zinc-400"}`}>
+                    <p className={`text-xs font-medium uppercase tracking-widest ${theme === "dark" ? "text-zinc-400" : "text-zinc-600"}`}>
                         Timezone Converter
                     </p>
                     <button
                         onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
                         className={`rounded-lg border p-2 transition active:scale-95 ${theme === "dark"
-                                ? "border-zinc-800 bg-zinc-900/50 text-zinc-500 hover:border-zinc-600 hover:text-white"
-                                : "border-zinc-200 bg-white text-zinc-400 hover:border-zinc-400 hover:text-zinc-900"
+                                ? "border-zinc-800 bg-zinc-900/50 text-zinc-400 hover:border-zinc-600 hover:text-white"
+                                : "border-zinc-200 bg-white text-zinc-500 hover:border-zinc-400 hover:text-zinc-900"
                             }`}
                         title={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
                     >
@@ -212,16 +212,16 @@ export default function TimezoneConverter() {
                     {/* Time Input */}
                     <div className={`rounded-2xl border p-6 transition-all ${theme === "dark" ? "border-zinc-800 bg-zinc-900" : "border-zinc-200 bg-white"}`}>
                         <div className="flex justify-between items-center mb-4">
-                            <label className="block text-xs font-medium uppercase tracking-widest text-zinc-500">Set baseline time</label>
+                            <label className={`block text-xs font-medium uppercase tracking-widest ${theme === "dark" ? "text-zinc-400" : "text-zinc-600"}`}>Set baseline time</label>
                             {userTz && (
-                                <span className={`text-[10px] font-bold uppercase tracking-tighter ${theme === "dark" ? "text-zinc-700" : "text-zinc-300"}`}>
+                                <span className={`text-[10px] font-bold uppercase tracking-tighter ${theme === "dark" ? "text-zinc-600" : "text-zinc-400"}`}>
                                     {userTz.replace(/_/g, ' ')}
                                 </span>
                             )}
                         </div>
                         <div className="space-y-4">
                             <div ref={baselineRef} className="relative">
-                                <label className={`block text-[10px] font-bold uppercase tracking-widest mb-2 ${theme === "dark" ? "text-zinc-600" : "text-zinc-400"}`}>Baseline Location</label>
+                                <label className={`block text-[10px] font-bold uppercase tracking-widest mb-2 ${theme === "dark" ? "text-zinc-400" : "text-zinc-600"}`}>Baseline Location</label>
                                 <div 
                                     onClick={() => setShowBaselineSuggestions(true)}
                                     className={`w-full rounded-xl border px-4 py-3 flex items-center justify-between cursor-pointer transition-all ${theme === "dark"
@@ -275,7 +275,7 @@ export default function TimezoneConverter() {
                             </div>
 
                             <div>
-                                <label className={`block text-[10px] font-bold uppercase tracking-widest mb-2 ${theme === "dark" ? "text-zinc-600" : "text-zinc-400"}`}>Baseline Time</label>
+                                <label className={`block text-[10px] font-bold uppercase tracking-widest mb-2 ${theme === "dark" ? "text-zinc-400" : "text-zinc-600"}`}>Baseline Time</label>
                                 <input
                                     type="time"
                                     value={time}
@@ -287,7 +287,7 @@ export default function TimezoneConverter() {
                                 />
                             </div>
                         </div>
-                        <p className={`text-[10px] uppercase tracking-tighter mt-3 ${theme === "dark" ? "text-zinc-600" : "text-zinc-400"}`}>
+                        <p className={`text-[10px] uppercase tracking-tighter mt-3 ${theme === "dark" ? "text-zinc-400" : "text-zinc-600"}`}>
                             Leave blank to use current real-time
                         </p>
                     </div>
@@ -297,7 +297,7 @@ export default function TimezoneConverter() {
                         ref={searchRef}
                         className={`rounded-2xl border p-6 transition-all relative ${theme === "dark" ? "border-zinc-800 bg-zinc-900" : "border-zinc-200 bg-white"}`}
                     >
-                        <label className="block text-xs font-medium uppercase tracking-widest text-zinc-500 mb-4">Add location</label>
+                        <label className={`block text-xs font-medium uppercase tracking-widest mb-4 ${theme === "dark" ? "text-zinc-400" : "text-zinc-600"}`}>Add location</label>
                         <div className="relative">
                             <input
                                 type="text"
@@ -333,7 +333,7 @@ export default function TimezoneConverter() {
                                             </button>
                                         ))
                                     ) : (
-                                        <div className="px-4 py-3 text-xs text-zinc-500 italic">No results found</div>
+                                        <div className={`px-4 py-3 text-xs italic ${theme === "dark" ? "text-zinc-400" : "text-zinc-600"}`}>No results found</div>
                                     )}
                                 </div>
                             )}
@@ -356,12 +356,12 @@ export default function TimezoneConverter() {
                                     }`}
                             >
                                 <div className="flex justify-between items-start mb-4">
-                                    <p className={`text-[10px] font-bold uppercase tracking-widest ${theme === "dark" ? "text-zinc-600" : "text-zinc-400"}`}>
+                                    <p className={`text-[10px] font-bold uppercase tracking-widest ${theme === "dark" ? "text-zinc-400" : "text-zinc-600"}`}>
                                         {displayName}
                                     </p>
                                     <button
                                         onClick={() => setSelectedTzs(selectedTzs.filter((t) => t !== tz))}
-                                        className={`rounded-full p-1 transition-opacity opacity-0 group-hover:opacity-100 ${theme === "dark" ? "hover:bg-zinc-800 text-zinc-500" : "hover:bg-zinc-100 text-zinc-400"}`}
+                                        className={`rounded-full p-1 transition-opacity opacity-0 group-hover:opacity-100 ${theme === "dark" ? "hover:bg-zinc-800 text-zinc-400" : "hover:bg-zinc-100 text-zinc-500"}`}
                                         aria-label="Remove timezone"
                                     >
                                         <X size={14} />
@@ -371,7 +371,7 @@ export default function TimezoneConverter() {
                                     <p className="text-3xl font-bold tracking-tighter tabular-nums mb-1">
                                         {formatTime(tz, date)}
                                     </p>
-                                    <div className={`flex items-center gap-2 text-[10px] uppercase tracking-tight ${theme === "dark" ? "text-zinc-500" : "text-zinc-400"}`}>
+                                    <div className={`flex items-center gap-2 text-[10px] uppercase tracking-tight ${theme === "dark" ? "text-zinc-400" : "text-zinc-600"}`}>
                                         <span>{formatDate(tz, date)}</span>
                                         <span className="opacity-20">•</span>
                                         <span>{getOffset(tz, date)}</span>

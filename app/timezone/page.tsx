@@ -1,5 +1,5 @@
-import TimezoneConverter from '@/components/utilities/TimezoneConverter';
 import { Metadata } from "next";
+import TimezoneClient from "./TimezoneClient";
 
 export const metadata: Metadata = {
     title: "Timezone Converter | Global Time Comparison",
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function Page() {
     return (
         <main className="h-screen flex flex-col overflow-hidden">
-            <TimezoneConverter />
+            <TimezoneClient />
         </main>
     );
 }

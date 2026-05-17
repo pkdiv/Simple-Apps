@@ -310,7 +310,7 @@ export default function LimitCounter() {
           <span className={`tabular-nums text-8xl font-semibold transition-colors duration-300 ${theme === "dark" ? "text-white" : "text-zinc-900"}`}>
             {count}
           </span>
-          <span className={`mt-1 text-sm ${theme === "dark" ? "text-zinc-500" : "text-zinc-400"}`}>
+          <span className={`mt-1 text-sm ${theme === "dark" ? "text-zinc-400" : "text-zinc-500"}`}>
             {isInfinite ? "No Limit" : `of ${limit}`}
           </span>
         </div>
@@ -325,8 +325,8 @@ export default function LimitCounter() {
           }}
           disabled={!isInfinite && count >= limit}
           className={`group relative flex h-16 w-16 items-center justify-center rounded-3xl border shadow-2xl backdrop-blur-md transition-all ${theme === "dark"
-            ? "border-zinc-800/50 bg-zinc-900/30 text-zinc-500 hover:border-zinc-600 hover:bg-zinc-800/40 hover:text-zinc-200"
-            : "border-zinc-200 bg-white/50 text-zinc-400 hover:border-zinc-400 hover:bg-zinc-100/80 hover:text-zinc-700"
+            ? "border-zinc-800/50 bg-zinc-900/30 text-zinc-400 hover:border-zinc-600 hover:bg-zinc-800/40 hover:text-zinc-200"
+            : "border-zinc-200 bg-white/50 text-zinc-500 hover:border-zinc-400 hover:bg-zinc-100/80 hover:text-zinc-700"
             } ${!isInfinite && count >= limit
               ? "opacity-20 cursor-not-allowed"
               : "active:scale-95"
@@ -353,8 +353,8 @@ export default function LimitCounter() {
           }}
           disabled={!isInfinite && count >= limit}
           className={`group relative flex h-16 w-16 items-center justify-center rounded-3xl border shadow-2xl backdrop-blur-md transition-all ${theme === "dark"
-            ? "border-zinc-800/50 bg-zinc-900/30 text-zinc-500 hover:border-zinc-600 hover:bg-zinc-800/40 hover:text-zinc-200"
-            : "border-zinc-200 bg-white/50 text-zinc-400 hover:border-zinc-400 hover:bg-zinc-100/80 hover:text-zinc-700"
+            ? "border-zinc-800/50 bg-zinc-900/30 text-zinc-400 hover:border-zinc-600 hover:bg-zinc-800/40 hover:text-zinc-200"
+            : "border-zinc-200 bg-white/50 text-zinc-500 hover:border-zinc-400 hover:bg-zinc-100/80 hover:text-zinc-700"
             } ${!isInfinite && count >= limit
               ? "opacity-20 cursor-not-allowed"
               : "active:scale-95"
@@ -378,7 +378,7 @@ export default function LimitCounter() {
 
       <div className="mt-4 flex flex-wrap items-center justify-center gap-6">
         <div className="flex items-center gap-3">
-          <label className={`text-sm ${theme === "dark" ? "text-zinc-600" : "text-zinc-400"}`}>Limit</label>
+          <label className={`text-sm ${theme === "dark" ? "text-zinc-400" : "text-zinc-600"}`}>Limit</label>
           <div className={`flex items-center overflow-hidden rounded-lg border transition-colors ${theme === "dark"
             ? "border-zinc-800 bg-zinc-900/50 focus-within:border-zinc-600"
             : "border-zinc-200 bg-white focus-within:border-zinc-400"
@@ -420,8 +420,8 @@ export default function LimitCounter() {
             setSoundEnabled(!soundEnabled);
           }}
           className={`rounded-lg border p-1.5 transition active:scale-95 ${theme === "dark"
-            ? "border-zinc-800 bg-zinc-900/50 text-zinc-500 hover:border-zinc-600 hover:text-white"
-            : "border-zinc-200 bg-white text-zinc-400 hover:border-zinc-400 hover:text-zinc-900"
+            ? "border-zinc-800 bg-zinc-900/50 text-zinc-400 hover:border-zinc-600 hover:text-white"
+            : "border-zinc-200 bg-white text-zinc-500 hover:border-zinc-400 hover:text-zinc-900"
             }`}
           title={soundEnabled ? "Disable sound" : "Enable sound"}
         >
@@ -461,8 +461,8 @@ export default function LimitCounter() {
             setTheme(theme === "dark" ? "light" : "dark");
           }}
           className={`rounded-lg border p-1.5 transition active:scale-95 ${theme === "dark"
-            ? "border-zinc-800 bg-zinc-900/50 text-zinc-500 hover:border-zinc-600 hover:text-white"
-            : "border-zinc-200 bg-white text-zinc-400 hover:border-zinc-400 hover:text-zinc-900"
+            ? "border-zinc-800 bg-zinc-900/50 text-zinc-400 hover:border-zinc-600 hover:text-white"
+            : "border-zinc-200 bg-white text-zinc-500 hover:border-zinc-400 hover:text-zinc-900"
             }`}
           title={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
         >
@@ -502,7 +502,7 @@ export default function LimitCounter() {
         </button>
       </div>
 
-      <p className={`text-xs ${theme === "dark" ? "text-zinc-700" : "text-zinc-300"}`}>tap on the right to increase and left to decrease</p>
+      <p className={`text-xs ${theme === "dark" ? "text-zinc-400" : "text-zinc-600"}`}>tap on the right to increase and left to decrease</p>
 
       {ripples.map((r) => (
         <div

@@ -1,5 +1,5 @@
-import CSVToChart from '@/components/utilities/CSVToChart';
 import { Metadata } from "next";
+import GraphClient from "./GraphClient";
 
 export const metadata: Metadata = {
     title: "Data Visualizer | Instant CSV Charts",
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function Page() {
     return (
         <main className="h-screen flex flex-col overflow-hidden">
-            <CSVToChart />
+            <GraphClient />
         </main>
     );
 }

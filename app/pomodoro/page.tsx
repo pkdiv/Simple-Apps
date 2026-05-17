@@ -1,5 +1,5 @@
-import PomodoroTimer from "@/components/utilities/PomodoroTimer";
 import { Metadata } from "next";
+import PomodoroClient from "./PomodoroClient";
 
 export const metadata: Metadata = {
     title: "Pomodoro Timer | Minimalist Focus Tool",
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 export default function Page() {
     return (
         <main className="h-screen flex flex-col overflow-hidden">
-            <PomodoroTimer />
+            <PomodoroClient />
         </main>
     );
 }

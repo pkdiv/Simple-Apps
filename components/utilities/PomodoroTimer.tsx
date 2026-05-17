@@ -223,7 +223,7 @@ export default function PomodoroTimer() {
           <span className="tabular-nums text-6xl font-bold tracking-tighter">
             {formatTime(timeLeft)}
           </span>
-          <span className={`mt-2 text-xs font-medium uppercase tracking-widest ${theme === "dark" ? "text-zinc-600" : "text-zinc-400"}`}>
+          <span className={`mt-2 text-xs font-medium uppercase tracking-widest ${theme === "dark" ? "text-zinc-400" : "text-zinc-600"}`}>
             {mode === "focus" ? "Focus Time" : "Break Time"}
           </span>
         </div>
@@ -233,8 +233,8 @@ export default function PomodoroTimer() {
         <button
           onClick={resetTimer}
           className={`group flex h-12 w-12 items-center justify-center rounded-2xl border shadow-xl backdrop-blur-md transition-all active:scale-90 ${theme === "dark"
-            ? "border-zinc-800/50 bg-zinc-900/30 text-zinc-500 hover:border-zinc-600 hover:text-zinc-200"
-            : "border-zinc-200 bg-white/50 text-zinc-400 hover:border-zinc-400 hover:text-zinc-700"
+            ? "border-zinc-800/50 bg-zinc-900/30 text-zinc-400 hover:border-zinc-600 hover:text-zinc-200"
+            : "border-zinc-200 bg-white/50 text-zinc-500 hover:border-zinc-400 hover:text-zinc-700"
             }`}
           aria-label="Reset timer"
         >
@@ -247,8 +247,8 @@ export default function PomodoroTimer() {
         <button
           onClick={toggleTimer}
           className={`group flex h-16 w-16 items-center justify-center rounded-3xl border shadow-2xl backdrop-blur-md transition-all active:scale-95 ${theme === "dark"
-            ? "border-zinc-800/50 bg-zinc-900/30 text-zinc-500 hover:border-zinc-600 hover:bg-zinc-800/40 hover:text-zinc-200"
-            : "border-zinc-200 bg-white/50 text-zinc-400 hover:border-zinc-400 hover:bg-zinc-100/80 hover:text-zinc-700"
+            ? "border-zinc-800/50 bg-zinc-900/30 text-zinc-400 hover:border-zinc-600 hover:bg-zinc-800/40 hover:text-zinc-200"
+            : "border-zinc-200 bg-white/50 text-zinc-500 hover:border-zinc-400 hover:bg-zinc-100/80 hover:text-zinc-700"
             }`}
           aria-label={isActive ? "Pause timer" : "Start timer"}
         >
@@ -267,8 +267,8 @@ export default function PomodoroTimer() {
         <button
           onClick={skipMode}
           className={`group flex h-12 w-12 items-center justify-center rounded-2xl border shadow-xl backdrop-blur-md transition-all active:scale-90 ${theme === "dark"
-            ? "border-zinc-800/50 bg-zinc-900/30 text-zinc-500 hover:border-zinc-600 hover:text-zinc-200"
-            : "border-zinc-200 bg-white/50 text-zinc-400 hover:border-zinc-400 hover:text-zinc-700"
+            ? "border-zinc-800/50 bg-zinc-900/30 text-zinc-400 hover:border-zinc-600 hover:text-zinc-200"
+            : "border-zinc-200 bg-white/50 text-zinc-500 hover:border-zinc-400 hover:text-zinc-700"
             }`}
           aria-label="Skip mode"
         >
@@ -285,8 +285,8 @@ export default function PomodoroTimer() {
           <button
             onClick={() => setSoundEnabled(!soundEnabled)}
             className={`rounded-lg border p-2 transition active:scale-95 ${theme === "dark"
-              ? "border-zinc-800 bg-zinc-900/50 text-zinc-500 hover:border-zinc-600 hover:text-white"
-              : "border-zinc-200 bg-white text-zinc-400 hover:border-zinc-400 hover:text-zinc-900"
+              ? "border-zinc-800 bg-zinc-900/50 text-zinc-400 hover:border-zinc-600 hover:text-white"
+              : "border-zinc-200 bg-white text-zinc-500 hover:border-zinc-400 hover:text-zinc-900"
               }`}
             title={soundEnabled ? "Disable sound" : "Enable sound"}
           >
@@ -307,8 +307,8 @@ export default function PomodoroTimer() {
           <button
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
             className={`rounded-lg border p-2 transition active:scale-95 ${theme === "dark"
-              ? "border-zinc-800 bg-zinc-900/50 text-zinc-500 hover:border-zinc-600 hover:text-white"
-              : "border-zinc-200 bg-white text-zinc-400 hover:border-zinc-400 hover:text-zinc-900"
+              ? "border-zinc-800 bg-zinc-900/50 text-zinc-400 hover:border-zinc-600 hover:text-white"
+              : "border-zinc-200 bg-white text-zinc-500 hover:border-zinc-400 hover:text-zinc-900"
               }`}
             title={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
           >
@@ -352,7 +352,7 @@ export default function PomodoroTimer() {
             );
           })}
         </div>
-        <p className={`text-[10px] uppercase tracking-widest ${theme === "dark" ? "text-zinc-700" : "text-zinc-300"}`}>
+        <p className={`text-[10px] uppercase tracking-widest ${theme === "dark" ? "text-zinc-400" : "text-zinc-600"}`}>
           Session {sessionsCompleted + 1}
         </p>
       </div>

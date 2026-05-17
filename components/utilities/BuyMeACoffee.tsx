@@ -5,8 +5,8 @@ export default function BuyMeACoffee({ theme = "dark" }: { theme?: "light" | "da
       target="_blank"
       rel="noopener noreferrer"
       className={`z-10 mt-4 flex items-center gap-2 rounded-full border px-4 py-1.5 text-[10px] font-medium uppercase tracking-wider transition active:scale-95 ${theme === "dark"
-        ? "border-zinc-800 text-zinc-500 hover:border-zinc-700 hover:bg-zinc-900 hover:text-zinc-300"
-        : "border-zinc-200 text-zinc-400 hover:border-zinc-300 hover:bg-zinc-100 hover:text-zinc-600"
+        ? "border-zinc-800 text-zinc-400 hover:border-zinc-700 hover:bg-zinc-900 hover:text-zinc-300"
+        : "border-zinc-200 text-zinc-500 hover:border-zinc-300 hover:bg-zinc-100 hover:text-zinc-600"
         }`}
     >
       <span>Buy me a chai</span>
