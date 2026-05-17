@@ -9,6 +9,7 @@ const apps = [
         description:
             "Count taps with a custom limit. Plays an alarm when you hit your target.",
         external: false,
+        previewImage: "/previews/counter.png",
     },
     {
         slug: "pomodoro",
@@ -16,8 +17,24 @@ const apps = [
         description:
             "Stay focused with a minimalist Pomodoro timer. Customizable focus and break intervals.",
         external: false,
+        previewImage: "/previews/pomodoro.png",
     },
-
+    {
+        slug: "graph",
+        name: "Data Visualizer",
+        description:
+            "Visualize your data instantly. Upload or paste CSV data to generate beautiful bar charts.",
+        external: false,
+        previewImage: "/previews/graph.png",
+    },
+    {
+        slug: "timezone",
+        name: "Timezone Converter",
+        description:
+            "Compare times across different time zones. Minimalist tool for global scheduling.",
+        external: false,
+        previewImage: "/previews/timezone.png",
+    },
 ];
 
 
@@ -48,6 +65,7 @@ export default function AppsPage() {
                             description={app.description}
                             href={app.external ? app.slug : `/${app.slug}`}
                             previewSrc={app.external ? app.slug : `/${app.slug}`}
+                            previewImage={app.previewImage}
                             external={app.external}
                         />
                     ))}
