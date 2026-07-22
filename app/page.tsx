@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import PreviewCard from "@/components/PageComponents/PreviewCard";
 import BuyMeACoffee from "@/components/utilities/BuyMeACoffee";
 
@@ -41,8 +42,21 @@ const apps = [
     },
 ];
 
-
-
+export const metadata: Metadata = {
+    title: "Simple Apps | Minimal Web Tools",
+    description: "A collection of beautiful, minimal web tools — including a tap counter, pomodoro timer, CSV data visualizer, and timezone converter. Fast, free, and works offline.",
+    keywords: ["web tools", "simple apps", "utility apps", "tap counter", "pomodoro timer", "csv chart", "timezone converter"],
+    openGraph: {
+        title: "Simple Apps | Minimal Web Tools",
+        description: "A collection of beautiful, minimal web tools. Fast, free, and works offline.",
+        type: "website",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Simple Apps | Minimal Web Tools",
+        description: "A collection of beautiful, minimal web tools. Fast, free, and works offline.",
+    },
+};
 
 export default function AppsPage() {
     return (

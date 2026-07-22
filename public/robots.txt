@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://apps.pkdiv.com/sitemap.xml

@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import PomodoroClient from "./PomodoroClient";
+import pomodoroImg from "@/public/previews/pomodoro.webp";
 
 export const metadata: Metadata = {
     title: "Pomodoro Timer | Minimalist Focus Tool",
@@ -9,11 +10,13 @@ export const metadata: Metadata = {
         title: "Pomodoro Timer | Minimalist Focus Tool",
         description: "Sleek, minimal Pomodoro timer with customizable intervals and beautiful animations.",
         type: "website",
+        images: pomodoroImg.src,
     },
     twitter: {
         card: "summary_large_image",
         title: "Pomodoro Timer | Minimalist Focus Tool",
         description: "Sleek, minimal Pomodoro timer with customizable intervals and beautiful animations.",
+        images: pomodoroImg.src,
     },
 };
 

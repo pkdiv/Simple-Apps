@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import CounterClient from "./CounterClient";
+import counterImg from "@/public/previews/counter.webp";
 
 export const metadata: Metadata = {
     title: "Tap Counter | Minimal & Beautiful Tally Counter",
@@ -9,11 +10,13 @@ export const metadata: Metadata = {
         title: "Tap Counter | Minimal & Beautiful Tally Counter",
         description: "Minimalist online tally counter with beautiful animations and customizable limits.",
         type: "website",
+        images: counterImg.src,
     },
     twitter: {
         card: "summary_large_image",
         title: "Tap Counter | Minimal & Beautiful Tally Counter",
         description: "Minimalist online tally counter with beautiful animations and customizable limits.",
+        images: counterImg.src,
     },
 };
 
